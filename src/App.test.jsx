@@ -8,10 +8,10 @@ test("button click flow", () => {
   logRoles(container);
 
   const button = screen.getByRole("button", { name: /blue/i});
-  expect(button).toHaveClass("red");
+  expect(button).toHaveClass("medium-violet-red");
 
   fireEvent.click(button);
-  expect(button).toHaveClass("blue");
+  expect(button).toHaveClass("midnight-blue");
   expect(button).toHaveTextContent(/red/i);
 });
 
@@ -57,7 +57,7 @@ test("disabled button should have gray background and reverts to red", () => {
   fireEvent.click(checkbox);
   expect(button).toHaveClass("gray");
   fireEvent.click(checkbox);
-  expect(button).toHaveClass("red");
+  expect(button).toHaveClass("medium-violet-red");
 });
 
 test("disabled button should have gray background and reverts to blue", () => {
@@ -70,7 +70,7 @@ test("disabled button should have gray background and reverts to blue", () => {
   fireEvent.click(checkbox);
   expect(button).toHaveClass("gray");
   fireEvent.click(checkbox);
-  expect(button).toHaveClass("blue");
+  expect(button).toHaveClass("midnight-blue");
 });
 
 describe("kebabCaseToTitleCase", () => {

@@ -1,10 +1,12 @@
 import React from "react";
 import "./App.css";
+import { kebabCaseToTitleCase } from "./helpers";
 
 function App() {
-  const [buttonColor, setButtonColor] = React.useState("red");
+  const [buttonColor, setButtonColor] = React.useState("medium-violet-red");
   const [disabled, setDisabled] = React.useState(false);
-  const nextColor = buttonColor === "red" ? "blue" : "red";
+  const nextColor = buttonColor === "medium-violet-red" ? "midnight-blue" : "medium-violet-red";
+  const nextColorTitleCase = kebabCaseToTitleCase(nextColor);
   const className = disabled ? "gray" : buttonColor;
 
   return (
@@ -13,7 +15,7 @@ function App() {
         className={className}
         onClick={() => setButtonColor(nextColor)}
         disabled={disabled}>
-        Change to {nextColor}
+        Change to {nextColorTitleCase}
       </button>
       <br />
       <input
